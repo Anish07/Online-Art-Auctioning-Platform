@@ -88,6 +88,7 @@ export default function Nav() {
           )}
         </div>
         <nav className="flex items-center gap-4">
+          <Link to="/about" className="dark:text-hf-text hover:text-purple-600 dark:hover:text-hf-yellow">About Us</Link>
           <Link to="/marketplace" className="dark:text-hf-text hover:text-purple-600 dark:hover:text-hf-yellow">Marketplace</Link>
           <Link to="/artists" className="dark:text-hf-text hover:text-purple-600 dark:hover:text-hf-yellow">Artists</Link>
           <Link to="/auctions" className="text-purple-600 font-medium dark:text-hf-yellow">Auctions</Link>

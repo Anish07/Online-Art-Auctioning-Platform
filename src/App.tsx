@@ -21,6 +21,7 @@ import AuctionDetailPage from './pages/AuctionDetailPage'
 import CreateAuctionPage from './pages/CreateAuctionPage'
 import WalletPage from './pages/WalletPage'
 import ArtistsPage from './pages/ArtistsPage'
+import AboutUsPage from './pages/AboutUsPage'
 
 const PrivateRoute = ({ children }: { children: JSX.Element }) => {
   const { user, loading } = useAuth()
@@ -49,7 +50,7 @@ const ArtistRoute = ({ children }: { children: JSX.Element }) => {
   const { user, loading } = useAuth()
   if (loading) return <div className="p-6">Loading...</div>
   if (!user) return <Navigate to="/login" replace />
-  if (user.role !== 'artist') return <Navigate to="/auctions" replace />
+  if (user.role !== 'artist' && user.role !== 'admin') return <Navigate to="/" replace />
   return children
 }
 
@@ -60,6 +61,7 @@ export default function App() {
         <Layout>
           <Routes>
             <Route path="/" element={<HomePage />} />
+            <Route path="/about" element={<AboutUsPage />} />
             <Route path="/login" element={<LoginPage />} />
             <Route path="/register" element={<RegisterPage />} />
             <Route path="/marketplace" element={<MarketplacePage />} />
