@@ -2,12 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --bg: #ffffff;
-  --fg: #111827;
-}
-
-body {
-  background: var(--bg);
-  color: var(--fg);
+@layer base {
+  body {
+    @apply dark:bg-hf-bg dark:text-hf-text transition-colors duration-200;
+  }
 }
