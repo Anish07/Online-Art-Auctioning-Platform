@@ -168,11 +168,10 @@ export default function CreateAuctionPage() {
                   key={artwork.id}
                   type="button"
                   onClick={() => handleArtworkSelect(artwork)}
-                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${
-                    selectedArtwork?.id === artwork.id
-                      ? 'border-blue-500 ring-2 ring-blue-200'
-                      : 'border-gray-200 hover:border-gray-300'
-                  }`}
+                  className={`aspect-square rounded-lg overflow-hidden border-2 transition-all ${selectedArtwork?.id === artwork.id
+                    ? 'border-blue-500 ring-2 ring-blue-200'
+                    : 'border-gray-200 hover:border-gray-300'
+                    }`}
                 >
                   <img
                     src={artwork.imageUrl}
