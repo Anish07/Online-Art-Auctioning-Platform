@@ -13,7 +13,7 @@ export default function LoginPage() {
     e.preventDefault()
     try {
       await login(email, password)
-      nav('/dashboard')
+      nav('/')
     } catch (e: any) {
       setErr(e?.response?.data?.message || 'Login failed')
     }
@@ -21,10 +21,10 @@ export default function LoginPage() {
 
   return (
     <div className="max-w-md mx-auto p-6">
-      <h2 className="text-2xl font-semibold">Sign in</h2>
+      <h2 className="text-2xl font-semibold dark:text-hf-text">Sign in</h2>
       <form onSubmit={submit} className="mt-4 space-y-3">
-        <input className="w-full p-2 border rounded" value={email} onChange={(e)=>setEmail(e.target.value)} placeholder="Email" />
-        <input className="w-full p-2 border rounded" value={password} onChange={(e)=>setPassword(e.target.value)} placeholder="Password" type="password" />
+        <input className="w-full p-2 border dark:border dark:border dark:bg-gray-800 dark:text-hf-text-gray-700-gray-700 rounded" value={email} onChange={(e) => setEmail(e.target.value)} placeholder="Email" />
+        <input className="w-full p-2 border dark:border dark:border dark:bg-gray-800 dark:text-hf-text-gray-700-gray-700 rounded" value={password} onChange={(e) => setPassword(e.target.value)} placeholder="Password" type="password" />
         {err && <div className="text-red-600">{err}</div>}
         <div className="flex items-center justify-between">
           <button className="px-4 py-2 rounded bg-primary text-white">Sign in</button>
